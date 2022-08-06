@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu JS</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <h1><a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg></a></h1>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Main Menu JavaScript</h1>
+        </header>
+        <nav id="menu">
+            
+        </nav>
+    </main>
+    <script>
+        const menu = document .getElementById('menu')
+        const links = [
+            {
+                url:'01-write.html',
+                text:'Write'
+            },
+            {
+                url:'02-comments.html',
+                text:'Comments'
+            },
+            {
+                url:'03-get-elements.html',
+                text:'Get Elements'
+            },
+            {
+                url:'04-variables.html',
+                text:'Variables'
+            },
+            {
+                url:'05-methods-object.html',
+                text:'Methods Object'
+            },
+            {
+                url:'06-types-objects.html',
+                text:'Types Objects'
+            },
+            {
+                url:'07-vehicle-object.html',
+                text:'Vehicle Object'
+            },
+            {
+                url:'08-functions.html',
+                text:'Fuctions'
+            },
+            {
+                url:'09-challenge-calculator.html',
+                text:'Challenge Calculator'
+            },
+            {
+                url:'10-operators-arithmetic.html',
+                text:'Operators Arithmetic'
+            },
+            {
+                url:'11-operators-assignment.html',
+                text:'Operators Assigment'
+            },
+            {
+                url:'12-operators-comparison.html',
+                text:'Operators Comparison'
+            },
+            {
+                url:'13-operators-logical.html',
+                text:'Operators Logical'
+            },
+            {
+                url:'14-conditional.html',
+                text:'Conditional'
+            },
+            {
+                url:'15-challenge-conditionals.html',
+                text:'Challenge Conditionals'
+            },
+            {
+                url:'16-loops.html',
+                text:'Loops'
+            },
+            {
+                url:'17-pokedex-api.html',
+                text:'Pokedex Api'
+            }
+        ]
+        
+
+        links.forEach(renderLink)
+
+        function renderLink(item, index){
+            menu.innerHTML += "<li><a href='"+item.url+"'><i>"+(index+1)+"</i> "+item.text+"</a></li>"
+        }
+
+        
+    </script>
+</body>
+</html>

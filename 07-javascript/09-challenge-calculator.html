@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge calculator</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        main{
+            background-color: rgb(0, 0, 0);
+            height: 730px;
+        }
+       header h1{
+            font-size: 2.1rem;
+            line-height: 3.8rem;
+        }
+        a{
+            top: -10px;
+        }
+        div.calculator{
+            margin: 40px auto;
+            width: 370px;
+        }
+        header.display{
+            background: url(images/calc/display.svg) no-repeat center;
+            width: 370px;
+            height: 130px;
+
+        }
+        header.display input.value{
+            border: none;
+            background: none;
+            outline: none;
+            color: #ffff;
+            font-style: normal;
+            font-size: 20px;
+            position: absolute;
+            text-align: right;
+            right: 30px;
+            top: 50px;
+            width: 19rem;
+        }
+        section.buttons{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(68px,1fr));
+            row-gap: 15px;
+            column-gap: 30px;
+            margin: 3px 0;
+        }
+        section.buttons button{
+            width: 73px;
+            border: none;
+            height: 73px;
+            transition: 0.1s ease-in;
+        }
+        section.buttons button:hover{
+            transform: scale(1.10);
+            cursor: grab;
+        }
+        button.btn-clear{
+            background: url(images/calc/btn-clear.svg) no-repeat center;
+            
+        }
+        button.btn-back{
+            background: url(images/calc/btn-back.svg) no-repeat center;
+            
+        }
+        button.btn-exp{
+            background: url(images/calc/btn-exp.svg) no-repeat center;
+            
+        }
+        button.btn-mod{
+            background: url(images/calc/btn-mod.svg) no-repeat center;
+            
+        }
+        button.btn-1{
+            background: url(images/calc/btn-1.svg) no-repeat center;
+            border: none;
+            border-radius: 5px;
+        }
+        button.btn-2{
+            background: url(images/calc/btn-2.svg) no-repeat center;
+            
+        }
+        button.btn-3{
+            background: url(images/calc/btn-3.svg) no-repeat center;
+           
+        }
+        button.btn-multiplication{
+            background: url(images/calc/btn-multiplication.svg) no-repeat center;
+            
+        }
+        button.btn-4{
+            background: url(images/calc/btn-4.svg) no-repeat center;
+            
+        }
+        button.btn-5{
+            background: url(images/calc/btn-5.svg) no-repeat center;
+            
+        }
+        button.btn-6{
+            background: url(images/calc/btn-6.svg) no-repeat center;
+            
+        }
+        button.btn-rest{
+            background: url(images/calc/btn-rest.svg) no-repeat center;
+            
+        }
+        button.btn-7{
+            background: url(images/calc/btn-7.svg) no-repeat center;
+            
+        }
+        button.btn-8{
+            background: url(images/calc/btn-8.svg) no-repeat center;
+            
+        }
+        button.btn-9{
+            background: url(images/calc/btn-9.svg) no-repeat center;
+            
+        }
+        button.btn-sum{
+            background: url(images/calc/btn-sum.svg) no-repeat center;
+            
+        }
+        button.btn-div{
+            background: url(images/calc/btn-div.svg) no-repeat center;
+            
+        }
+        button.btn-0{
+            background: url(images/calc/btn-0.svg) no-repeat center;
+         
+        }
+        button.btn-point{
+            background: url(images/calc/btn-point.svg) no-repeat center;
+            
+        }
+        button.btn-iqual{
+            background: url(images/calc/btn-iqual.svg) no-repeat center;
+            
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+            </a>
+            <h1>Challenge Calculator</h1>
+        </header>
+        <section>
+            <div class="calculator">
+                <header class="display">
+                    <input type="text" class="value" readonly>
+                </header>
+
+                <section class="buttons">
+                    <button class="btn-clear"></button>
+                    <button class="btn-back"></button>
+                    <button class="btn-exp"            data-opr="^"></button>
+                    <button class="btn-mod"            data-opr="%"></button>
+                    <button class="btn-1"              data-num="1"></button>
+                    <button class="btn-2"              data-num="2"></button>
+                    <button class="btn-3"              data-num="3"></button>
+                    <button class="btn-multiplication" data-opr="*"></button>
+                    <button class="btn-4"              data-num="4"></button>
+                    <button class="btn-5"              data-num="5"></button>
+                    <button class="btn-6"              data-num="6"></button>
+                    <button class="btn-rest"           data-opr="-"></button>
+                    <button class="btn-7"              data-num="7"></button>
+                    <button class="btn-8"              data-num="8"></button>
+                    <button class="btn-9"              data-num="9"></button>
+                    <button class="btn-sum"            data-opr="+"></button>
+                    <button class="btn-div"            data-opr="/"></button>
+                    <button class="btn-0"              data-num="0"></button>
+                    <button class="btn-point"          data-opr="."></button>
+                    <button class="btn-iqual"></button>
+                </section>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Value in Display 
+        const display = document.querySelector('input.value')
+        //Button
+        const btnClear = document.querySelector('button.btn-clear')
+        const btnBack = document.querySelector('button.btn-back')
+        const btnIqual = document.querySelector('button.btn-iqual')
+        //All numbers & operators
+        const btnsNumbers = document.querySelectorAll('button[data-num]')
+        const btnsOperators = document.querySelectorAll('button[data-opr]')
+        //logit value
+        var operStatus = false
+        //Activate click event in all numbers & operators
+        for (let i = 0; i < btnsNumbers.length; i++) {
+            btnsNumbers[i].onclick = function() {
+                operStatus = true
+                addToDisplay(this.getAttribute('data-num'))
+            }  
+        }
+        for (let i = 0; i <btnsOperators.length; i++) {
+           btnsOperators[i].onclick = function() {
+                if(operStatus){
+                addToDisplay(this.getAttribute('data-opr'))
+                operStatus = false
+
+                }
+            }  
+        }
+
+       //Events
+       document.onkeyup = (evt) => {
+            // 0 - 9 = 96, 97, 98, 99, 100, 101, 102, 103, 104, 105
+            switch (evt.keyCode) {
+                case 8: 
+                    deleteLastValue()
+                    break;
+                case 46: 
+                    clearDisplay()
+                    break;
+                case 96:
+                case 48:
+                    addToDisplay(0)
+                    break;
+                case 97:
+                case 49:
+                    addToDisplay(1)
+                    break;
+                case 98:
+                case 50:
+                    addToDisplay(2)
+                    break;
+                case 99:
+                case 51:
+                    addToDisplay(3)
+                    break;
+                case 100:
+                case 52:
+                    addToDisplay(4)
+                    break;
+                case 101:
+                case 53:
+                    if (evt.shiftKey) {
+                        addToDisplay('%')
+                    }else{
+                    addToDisplay(5)
+                    }
+                    break;
+                case 102:
+                case 54:
+                    addToDisplay(6)
+                    break;
+                case 103:
+                case 55:
+                    if(evt.shiftKey){
+                        addToDisplay('/')
+                    }else{
+                    addToDisplay(7)
+                    }
+                    break;
+                case 111: 
+                    addToDisplay('/')
+                    break;
+                case 104:
+                case 56:
+                    addToDisplay(8)
+                    break;
+                case 105:
+                case 57:
+                    addToDisplay(9)
+                    break;
+                case 67:
+                    clearDisplay()
+                    break;
+                case 106:
+                    addToDisplay('*')
+                    break;
+                case 187: 
+                case 107:
+                    if(evt.shiftKey){
+                        addToDisplay('*')
+                    } else{
+                        addToDisplay('+')
+                    }
+                    break;
+                case 190:
+                case 110:
+                    addToDisplay('.')
+                    break;
+                
+                default:
+                    break;
+                case 222:
+                    if (evt.ctrlKey && evt.altKey) {
+                        addToDisplay('^')
+                    }
+                    break;
+                case 189: 
+                case 109:
+                    addToDisplay('-')
+                    break;
+                case 13: 
+                    btnIqual.onclick()
+                    break;
+                
+            }
+
+        }
+        btnClear.onclick = () => {
+            clearDisplay()
+        }
+        btnBack.onclick = () => {
+            deleteLastValue()
+        }
+        btnIqual.onclick = () => {
+            var operation = display.value;
+            if (operation.trim() != '') {
+                operation = operation.replace('^', '**');
+                operation = eval(operation)
+                display.value = operation
+            }
+        }
+
+        // Functions
+        function deleteLastValue(){
+            display.value = display.value.slice(0, -1)
+            if (isNaN(display.value.slice(-1))){
+                operStatus = false
+            } else {
+                operStatus = true
+            }
+        }
+        function clearDisplay(){
+            display.value = ''
+            operStatus = false
+        }
+    
+        function addToDisplay(c) {
+            if(validateLength()){
+                display.value +=c 
+            }
+        }
+        function validateLength() {
+            if(display.value.length < 35){
+                return true
+            }else{
+                return false
+            }
+        }
+
+    </script>
+</body>
+</html>

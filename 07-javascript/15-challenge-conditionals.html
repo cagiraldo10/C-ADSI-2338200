@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        main.form a svg{
+            top: 50px;
+            position: relative;
+        }
+        *{
+            color: black;
+        }
+        main.form{
+            background-color: #000000;
+            background: url(images/challenge/cond-01.svg) no-repeat center;
+            height: 800px;
+            width: 420px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            top: -25px;
+            left: -5px;
+            border: none;
+        }
+        /*.fondo{
+            background: url(images/challenge/cond-01.svg) no-repeat;
+            width: 450px;
+            height: 800px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            top: -25px;
+            left: -5px;
+            
+        }*/
+        input.name{
+            border-radius: 20px;
+            position: absolute;
+            width: 309px;
+            height: 30px;
+            background-color: #ff000099;
+            top: 535px;
+            left: 36px;
+            border: 1px solid #ffffff;
+            outline: none;
+            text-indent: 10px;
+            right: 50px;
+        }
+        
+        input#fechaNacimiento{
+            border-radius: 20px;
+            position: absolute;
+            width: 309px;
+            height: 30px;
+            background-color: #ff000099;
+            top: 619px;
+            left: 36px;
+            border: 1px solid #ffffff;
+            outline: none;
+            text-indent: 10px;
+            text-align: center;
+            padding: 2px;
+        }
+        .men{
+            background: url(images/challenge/btn-male.svg) no-repeat;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            border:none;
+            top: 280px;
+            left: 270px;
+            cursor: pointer;
+            transition: transform .2s ease-in;
+            
+        }
+        button.men:hover{
+            transform: scale(1.1);
+        }
+        .woman{
+            background: url(images/challenge/btn-female.svg) no-repeat;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            border:none;
+            top: 280px;
+            left: 45px;
+            cursor: pointer;
+            transition: transform .2s ease-in;
+        }
+        button.woman:hover{
+            transform: scale(1.1);
+        }
+       
+        .checkHG{
+            background: url(images/challenge/validateG.svg) no-repeat;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            margin-left: 60px;
+        }
+        .checkMG{
+            background: url(images/challenge/validateB.svg) no-repeat;
+            width: 20px;
+            height: 20px;
+            left: 38px;
+            top: 30px;
+            position: absolute;
+            margin-left: 60px;
+        }
+        
+        .validate{
+            box-sizing: border-box;
+            position: absolute;
+            width: 294px;
+            height: 30px;
+            background: #ff000099;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            top: 690px;
+            text-align: center;
+            bottom: 0;
+            left: 70px;
+            cursor: pointer;
+            transition: transform .2s ease-in;
+ 
+        }
+        button.validate:hover{
+            transform: scale(1.1);
+        }
+        
+        main.menGo article{
+            
+            background: url(images/challenge/menwar.svg) no-repeat center;
+            height: 800px;
+            width: 420px;
+            position: relative;
+            top: -75px;  
+        }
+        main.menGo article h1{
+            top: 100px;
+            left: 70px;
+        }
+        main.menGo article button.one{
+            box-sizing: border-box;
+            position: absolute;
+            width: 294px;
+            height: 30px;
+            background: #ff000099;
+            border: 1px solid #ffffff;
+            border-radius: 20px;
+            cursor: pointer;
+            top: 700px;
+            text-align: center;
+            bottom: 0;
+            left: 70px;
+            cursor: pointer;
+            color: #000000;
+
+        }
+        
+        main.menNo article{
+            background: url(images/challenge/menNwar.svg) no-repeat center;
+            width: 420px;
+            height: 800px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            top: -50px;
+        }
+        main.menNo article button{
+            box-sizing: border-box;
+            position: absolute;
+            width: 294px;
+            height: 30px;
+            background: #ff000099;
+            border: 1px solid #ffffff;
+            border-radius: 20px;
+            cursor: pointer;
+            top: 700px;
+            text-align: center;
+            bottom: 0;
+            left: 70px;
+            cursor: pointer;
+            color: #ECECEC;
+
+            
+            cursor: pointer;
+
+        }
+        main.womanNo article{
+            background: url(images/challenge/womanNwar.svg) no-repeat center;
+            width: 420px;
+            height: 800px;
+            position: relative;
+            top: -70px;
+            
+            
+        }
+        main.womanNo article button.three{
+            box-sizing: border-box;
+            position: absolute;
+            width: 294px;
+            height: 30px;
+            background: #ff000099;
+            border: 1px solid #ffffff;
+            border-radius: 20px;
+            cursor: pointer;
+            top: 700px;
+            text-align: center;
+            bottom: 0;
+            left: 70px;
+            cursor: pointer;
+            color: #ECECEC;
+
+        }
+        
+        h1#edadmenGo,h1#edadmenNo,h1#edadwomanNo{
+            
+            width: 150px;
+            margin-left: 136px;
+            margin-top:250px;
+            text-indent: 5px;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: #ff000099;
+            right: 250px;
+            left: 100px;
+            top: 90px;
+     
+            position: absolute;
+            font-size: 13px;
+        }
+        h1#nameGO,h1#nameNo,h1#nameW{
+            
+            width: 150px;
+            margin-left: 136px;
+            margin-top:200px;
+            text-indent: 5px;
+            top: 100px;
+
+            right: 250px;
+            left: 100px;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: #ff000099;
+            position: absolute;
+            font-size: 13px;
+            
+        }
+        
+        .ocultar{
+            display: none;
+        }
+        
+       /* 
+        main.womanNo,main.menGo,main.form{
+            display: none;
+        }
+        */
+    </style>
+</head>
+<body>
+    <main class="menGo ocultar">
+        <header>
+            
+            <h1></h1>
+        </header>
+        <article>
+            <section>
+                <h1 id="edadmenGo">Age:</h1>
+                <h1 id="nameGO">Name:</h1>
+            </section>
+            
+            <footer>
+                <button class="one">Back</button>
+            </footer>
+            
+        </article>
+        
+    </main>
+    <main class="menNo ocultar">
+        <header>
+            
+           
+           
+        </header>
+        <article>
+            <section>
+                <h1 id="edadmenNo">Age:</h1>
+                <h1 id="nameNo">Name:</h1>
+            </section>
+            <footer>
+                <button class="two">Back</button>
+            </footer>
+           
+            
+        </article>
+        
+    </main>
+    <main class="womanNo ocultar">
+        <header>
+            
+            
+            <h1></h1>
+        </header>
+        <article>
+            <section>
+                <h1 id="edadwomanNo">Name:</h1>
+                <h1 id="nameW">Age:</h1>
+            </section>
+            
+            <footer>
+                <button class="three">Back</button>
+            </footer>
+            
+            
+        </article>
+        
+    </main>
+    <main class="form">
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+            </a>
+            
+            
+        </header>
+        <article class="fondo">
+            <header class="gender">
+                <button class="men">
+                    <section class="checkHG ocultar"></section>
+                    
+                </button>
+                <button class="woman">
+                    <section class="checkMG ocultar"></section>
+                    
+                </button>
+            </header>
+            <form class="information">
+                <input type="text" class="name">
+                <input type="date" id="fechaNacimiento">
+            </form>
+            <footer>
+                    <button class="validate">Validate</button>
+            </footer>
+        </article>
+    </main>
+    <script>
+        // constantes de fecha
+        var edadfinal=0
+        var nombreFinal=0
+        const fechaNacimiento = document.getElementById("fechaNacimiento");
+        const edadmenGo = document.getElementById("edadmenGo");
+        const edadwomanNo = document.getElementById("edadwomanNo");
+        const edadmenNo = document.getElementById("edadmenNo");
+        //nombre
+        const nombre = document.querySelector('input.name')
+        var nameF = ''
+        const h1 = document.getElementById('nameGO')
+        const h2 = document.getElementById('nameNo')
+        const h3 = document.getElementById('nameW')
+       
+        
+        
+        // Constantes
+        const main1 = document.querySelector('main.menGo')
+        const main2 = document.querySelector('main.menNo')
+        const main3 = document.querySelector('main.womanNo')
+        const man = document.querySelector('button.men')
+        const woman = document.querySelector('button.woman')
+        const form = document.querySelector('main.form')
+        const valid = document.querySelector('button.validate')
+        const backHGO = document.querySelector('button.one')
+        const backMNGO = document.querySelector('button.three')
+        const backHNO = document.querySelector('button.two')
+        
+        const checkHG = document.querySelector('section.checkHG')
+        const checkMG = document.querySelector('section.checkMG')
+        
+        const calcularEdad = (fechaNacimiento) => {
+                const fechaActual = new Date();
+                const anoActual = parseInt(fechaActual.getFullYear());
+                const mesActual = parseInt(fechaActual.getMonth()) + 1;
+                const diaActual = parseInt(fechaActual.getDate());
+                // 
+                const anoNacimiento = parseInt(String(fechaNacimiento).substring(0, 4));
+                const mesNacimiento = parseInt(String(fechaNacimiento).substring(5, 7));
+                const diaNacimiento = parseInt(String(fechaNacimiento).substring(8, 10));
+                
+                let edadmenGo = anoActual - anoNacimiento;
+                if (mesActual < mesNacimiento) {
+                    edadmenGo--;
+                } else if (mesActual === mesNacimiento) {
+                    if (diaActual < diaNacimiento) {
+                        edadmenGo--;
+                    }
+                }
+                edadfinal=edadmenGo
+                return edadmenGo;
+                console.log(edadmenGo)
+            };
+            window.addEventListener('load', function () {
+
+                fechaNacimiento.addEventListener('change', function () {
+                    if (this.value) {
+                        edadmenGo.innerText = `Age: ${calcularEdad(this.value)} years`;
+                        edadmenNo.innerText = `Age: ${calcularEdad(this.value)} years`;
+                        edadwomanNo.innerText=`Age: ${calcularEdad(this.value)} years`;
+                        
+                    }
+                });
+
+            });
+        // actions
+        man.onclick = () =>{
+            // agregar
+            
+            checkHG.classList.remove('ocultar'),
+            checkMG.classList.add('ocultar'),
+            
+            // actions
+            valid.onclick = () =>{
+                form.classList.add('ocultar')
+                main1.classList.remove('ocultar')
+                nameF = nombre.value
+                h1.innerText= 'Name:'+nameF
+                
+            
+
+                if(edadfinal<18){
+                    nameF = nombre.value
+                    h2.innerText= 'Name:'+nameF
+                    
+                    main1.classList.add('ocultar')
+                    main2.classList.remove('ocultar')
+
+                    backHNO.onclick = () =>{
+                        main2.classList.add('ocultar')
+                        form.classList.remove('ocultar')
+                    }
+                }
+            }
+            backHGO.onclick = () =>{
+            main1.classList.add('ocultar')
+            form.classList.remove('ocultar')
+            }
+            
+            
+        }
+        woman.onclick = () =>{
+            // agregar
+            
+            checkMG.classList.remove('ocultar')
+            checkHG.classList.add('ocultar')
+            
+            // actions
+            valid.onclick = () =>{
+            form.classList.add('ocultar')
+            main3.classList.remove('ocultar')
+                nameF = nombre.value
+                h3.innerText= 'Name:'+nameF
+            }
+            backMNGO.onclick = () =>{
+                main3.classList.add('ocultar')
+                form.classList.remove('ocultar')
+            }
+        }
+        
+    </script>
+</body>
+</html>

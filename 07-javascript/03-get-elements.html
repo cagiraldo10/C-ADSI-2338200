@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Elemet(s)</title>
+    <link rel="stylesheet" href="css/menu.css">
+    
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+            </a>
+            <h1>Get Elemet(s)</h1>
+        </header>
+        <section>
+            <h3 id="year"></h3>
+            <ul>
+                <li>Bulbasaur</li>
+                <li>Squirtle</li>
+                <li>Charmander</li>
+                <li>Pikachu</li>
+            </ul>
+            <h3 id="nli"></h3>
+            <p class="paragraph">Lorem ipsum Dolo</p>
+            <p class="paragraph">Lorem ipsum Dolo</p>
+            <p class="paragraph">Lorem ipsum Dolo</p>
+            <h3 id="np"></h3>
+            
+        </section>
+    </main>
+    <script>
+        //Change Dom (Document object Model)
+        // getElementById
+        let year = document.getElementById('year')
+        let nli = document.getElementById('nli')
+        let  np  = document.getElementById('np')
+        
+        let ndate = new Date
+        year.innerText = 'The current year is: \n' + ndate.getFullYear()
+
+        //getElementsByTagName
+        let lis = document.getElementsByTagName('li')
+        nli.innerText = 'There are: ' + lis.length + ' list elemnts \n' + 
+                        'las element value is: '+ lis[lis.length-1].textContent
+        
+        //getElementsByClassName
+
+        let nps = document.getElementsByClassName('paragraph')
+        nps[nps.length-1].style.color = '#aa0'
+        np.innerText = 'There are: ' + nps.length +
+                        ' <p> whit class paragraph'
+
+        // querySelector(s)
+        
+        let btn = document.querySelector('button.first')
+        let btns = document.querySelectorAll('button.btn')
+        
+
+
+    </script>
+</body>
+</html>

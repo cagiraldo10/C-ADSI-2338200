@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Shadows#2</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        figure.frame{
+            height: 280px;
+            margin: 40px auto;
+            width: 220px;
+        }
+        div.squares{
+            background: url(imgs/square.png);
+            opacity: 0.6;
+            z-index: 2;
+            margin-top: -20px;
+            height: 200px;
+        }
+        div.Ghost{
+            background-color: rgb(255, 255, 255);
+            height: 20px;
+            width: 20px;
+            box-shadow: 20px  0 0 0 #fff,
+                        40px  0 0 0 #fff,
+                        60px  0 0 0 #fff,
+                        80px  0 0 0 rgb(252, 3, 3),
+                        100px 0 0 0 rgb(252, 3, 3),
+                        120px 0 0 0 rgb(252, 3, 3),
+                        140px 0 0 0 #fff,
+                        160px 0 0 0 #fff,
+                        180px 0 0 0 #fff,
+                        200px 0 0 0 #fff,
+
+                        0px    20px 0 0 #fff,
+                        20px   20px 0 0 #fff,
+                        40px   20px 0 0 #fff,
+                        60px   20px 0 0 rgb(252, 3, 3),
+                        80px   20px 0 0 rgb(252, 3, 3),
+                        100px  20px 0 0 rgb(252, 3, 3),
+                        120px  20px 0 0 rgb(252, 3, 3),
+                        140px  20px 0 0 rgb(252, 3, 3),
+                        160px  20px 0 0 #fff,
+                        180px  20px 0 0 #fff,
+                        200px  20px 0 0 #fff,
+
+                        0px    40px 0 0 #fff,
+                        20px   40px 0 0 #fff,
+                        40px   40px 0 0 rgb(252, 3, 3),
+                        60px   40px 0 0 rgb(252, 3, 3),
+                        80px   40px 0 0 rgb(252, 3, 3),
+                        100px  40px 0 0 rgb(252, 3, 3),
+                        120px  40px 0 0 rgb(252, 3, 3),
+                        140px  40px 0 0 rgb(252, 3, 3),
+                        160px  40px 0 0 rgb(252, 3, 3),
+                        180px  40px 0 0 #fff,
+                        200px  40px 0 0 #fff,
+
+                        0px    60px 0 0 #fff,
+                        20px   60px 0 0 #fff,
+                        40px   60px 0 0 rgb(252, 3, 3),
+                        60px   60px 0 0 #fff,
+                        80px   60px 0 0 #fff,
+                        100px  60px 0 0 rgb(252, 3, 3),
+                        120px  60px 0 0 #fff,
+                        140px  60px 0 0 #fff,
+                        160px  60px 0 0 rgb(252, 3, 3),
+                        180px  60px 0 0 #fff,
+                        200px  60px 0 0 #fff,
+
+                        0px    80px 0 0 #fff,
+                        20px   80px 0 0 #fff,
+                        40px   80px 0 0 rgb(252, 3, 3),
+                        60px   80px 0 0 #fff,
+                        80px   80px 0 0 rgb(0, 0, 0),
+                        100px  80px 0 0 rgb(252, 3, 3),
+                        120px  80px 0 0 #fff,
+                        140px  80px 0 0 rgb(0, 0, 0),
+                        160px  80px 0 0 rgb(252, 3, 3),
+                        180px  80px 0 0 #fff,
+                        200px  80px 0 0 #fff,
+
+                        0px    100px 0 0 #fff,
+                        20px   100px 0 0 #fff,
+                        40px   100px 0 0 rgb(252, 3, 3),
+                        60px   100px 0 0 rgb(252, 3, 3),
+                        80px   100px 0 0 rgb(252, 3, 3),
+                        100px  100px 0 0 rgb(252, 3, 3),
+                        120px  100px 0 0 rgb(252, 3, 3),
+                        140px  100px 0 0 rgb(252, 3, 3),
+                        160px  100px 0 0 rgb(252, 3, 3),
+                        180px  100px 0 0 #fff,
+                        200px  100px 0 0 #fff,
+
+                        0px    120px 0 0 #fff,
+                        20px   120px 0 0 #fff,
+                        40px   120px 0 0 rgb(252, 3, 3),
+                        60px   120px 0 0 rgb(252, 3, 3),
+                        80px   120px 0 0 rgb(252, 3, 3),
+                        100px  120px 0 0 rgb(252, 3, 3),
+                        120px  120px 0 0 rgb(252, 3, 3),
+                        140px  120px 0 0 rgb(252, 3, 3),
+                        160px  120px 0 0 rgb(252, 3, 3),
+                        180px  120px 0 0 #fff,
+                        200px  120px 0 0 #fff,
+
+                        0px    140px 0 0 #fff,
+                        20px   140px 0 0 #fff,
+                        40px   140px 0 0 rgb(252, 3, 3),
+                        60px   140px 0 0 rgb(252, 3, 3),
+                        80px   140px 0 0 rgb(252, 3, 3),
+                        100px  140px 0 0 rgb(252, 3, 3),
+                        120px  140px 0 0 rgb(252, 3, 3),
+                        140px  140px 0 0 rgb(252, 3, 3),
+                        160px  140px 0 0 rgb(252, 3, 3),
+                        180px  140px 0 0 #fff,
+                        200px  140px 0 0 #fff,
+
+                        0px    160px 0 0 #fff,
+                        20px   160px 0 0 #fff,
+                        40px   160px 0 0 rgb(252, 3, 3),
+                        60px   160px 0 0 rgb(252, 3, 3),
+                        80px   160px 0 0 rgb(252, 3, 3),
+                        100px  160px 0 0 rgb(252, 3, 3),
+                        120px  160px 0 0 rgb(252, 3, 3),
+                        140px  160px 0 0 rgb(252, 3, 3),
+                        160px  160px 0 0 rgb(252, 3, 3),
+                        180px  160px 0 0 #fff,
+                        200px  160px 0 0 #fff,
+
+                        0px    180px 0 0 #fff,
+                        20px   180px 0 0 #fff,
+                        40px   180px 0 0 rgb(252, 3, 3),
+                        60px   180px 0 0 #fff,
+                        80px   180px 0 0 rgb(252, 3, 3),
+                        100px  180px 0 0 #fff,
+                        120px  180px 0 0 rgb(252, 3, 3),
+                        140px  180px 0 0 #fff,
+                        160px  180px 0 0 rgb(252, 3, 3),
+                        180px  180px 0 0 #fff,
+                        200px  180px 0 0 #fff
+                    
+        } 
+        
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">🏡</a>Challenge Shadows#2</h1>
+        </header>
+        <section>
+            <h2>Ghost</h2>
+            <figure class="frame">
+                <div class="Ghost"></div>
+                <div class="squares"></div>
+            </figure>
+
+        </section>
+    </main>
+</body>
+</html>

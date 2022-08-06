@@ -1,0 +1,43 @@
+<h1>Challenge: </h1>
+<hr>
+<h3>Example:</h3>
+header#header>nav.navbar.navbar-inverse.navbar-fixed-top>div.container>(div.navbar-header>(btn[type=button].navbar-toggle[data-toggle=collapse][data-target=.navbar-collapse]>span.sr-only{toggle navigation}+span*3.icon-bar)+(a[href=index.php][class=navbar-brand]>img[src=imgs/logo.png]))+(div.collapse.navbar-collapse.navbar-rigth>ul.nav.navbar-nav>(li>a.link[href=index.html]{inicio})+(li.active.link>a[href=login.html]{ingresar})+(li>a.link[href=registro.html]{registrarse})+(li>a.link[href=contacto.html]{contacto}))
+
+<h3>Result</h3>
+
+<xmp>
+    <header id="header">
+        <nav class="navbar narbar-inverse narbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button  type="narbar-toggle" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">toggle navigation</span>
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a href="index.php" class="navbar-brand">
+                        <img src="imgd/logo.png" alt="">
+                    </a>
+                </div>
+        
+                <div class="collapse narbar-collapse narbar-right">
+                    <ul class="nav narbar-nav">
+                        <li>
+                            <a href="index.html" class="link">Inicio</a>
+                        </li>
+                        <li class="active link">
+                            <a href="login.html">Ingresar</a>
+                        </li>
+                        <li>
+                            <a href="registro.html" class="link">Resistrase</a>
+                        </li>
+                        <li>
+                            <a href="contacto.html" class="link">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>        
+        </nav>
+    </header>
+</xmp>

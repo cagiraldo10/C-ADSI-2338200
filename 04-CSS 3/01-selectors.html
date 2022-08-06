@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        ul{
+            list-style: none;
+            margin: 0 auto;
+            width: 310px;
+            padding: 20px;
+        }
+        ul li{
+            background-color: #fff;
+            color: black;
+            display: inline-block;
+            border-radius: 6px;
+            text-align: center;
+            line-height: 3rem;
+            font-size: 2rem;
+            height: 50px;
+            width: 50px;
+            margin: 0 4px;
+        }
+        ul li:first-of-type {
+            background-color: #c01ce9;
+            transition: all 0.2s ease-in;
+        }
+        ul li:first-of-type:hover{
+            transform: scale(1.2);
+        }
+        ul li:last-of-type{
+            background-color: #ff2cdc;
+            transition: all 0.2s ease-in;
+        }
+        ul li:last-of-type:hover{
+            transform: scale(1.2);
+        }
+        ul li:nth-child(3){
+            background-color: #ff1783;
+            transition: all 0.2s ease-in;
+        }
+        ul li:nth-child(3):hover{
+            transform: scale(1.2);
+        }
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        table td{
+            background-color: #fff;
+            border: 4px solid #08313b;
+            padding: 20px;
+        }
+        table tr:nth-child(2n) td:nth-child(2n+1),
+        table tr:nth-child(2n+1) td:nth-child(2n){
+            background-color: #08313b;
+        }
+        /* */
+        nav,
+        article{
+            background-color: #08313b;
+            display: inline-block;
+            border-radius: 6px;
+            vertical-align: top;
+            padding: 10px;
+        }
+        nav{
+            width: 30%;
+        }
+        article{
+            width: 60%;
+        }
+        nav a:link,
+        nav a:visited{
+            background-color: #1768ff;
+            border-radius: 4px;
+            color: #08313b;
+            display: block;
+            margin: 4px 0;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover{
+            opacity: 0.9;
+        }
+        article div{
+            display: none;
+        }
+        article div#home:target,
+        article div#services:target,
+        article div#contact:target{
+            display: block;
+        }
+        article div img{
+            height: 100%;
+            width: 100%;
+        }
+        /* */
+        p.yellow::selection{
+            background-color: #dd0;
+        }
+        p.blue::selection{
+            background-color: #00d;
+        }
+        p.red::selection{
+            background-color: #d00;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">🏡</a>Selectors</h1>
+        </header>
+        <section>
+            <h2>First-of-type / last-of-type / nth-child(3) </h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <h2>nth-child(N)</h2>
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table> 
+            <h2>Home:Target</h2>   
+            <nav class="menu">
+                <a href="#home">HOME</a>
+                <a href="#services">SERVICES</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+            <article>
+                <div id="home">
+                    <h3>HOME</h3>
+                    <img src="http://placekitten.com/300/200" >
+                </div>
+                <div id="services">
+                    <h3>SERVICES</h3>
+                    <img src="http://placekitten.com/300/204" >
+                </div>  
+                <div id="contact">
+                    <h3>CONTACT</h3>
+                    <img src="http://placekitten.com/300/208" >
+                        
+                </div>
+            </article>
+            <h2>::Selection</h2>
+            <p class="yellow">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quasi laborum, delectus, doloribus tenetur sed possimus fugiat debitis inventore architecto illum numquam, sequi neque exercitationem quae sit quam nostrum corrupti.
+            </p>
+            <p class="blue">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, deleniti. Similique nesciunt iste labore fugit possimus, nobis soluta provident repellendus modi ipsa temporibus officiis quasi eveniet delectus explicabo omnis eaque.
+            </p>
+            <p class="red">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt dolor aliquid, aut, odio eius quo atque necessitatibus eos labore quidem voluptatem modi alias quisquam asperiores laudantium impedit exercitationem eligendi sunt?
+            </p>
+        </section>
+    </main>
+</body>
+</html>
