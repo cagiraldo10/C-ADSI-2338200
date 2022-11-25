@@ -1,5 +1,3 @@
-<?php require 'config/app.php' ?>
-<?php include('config/database.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
